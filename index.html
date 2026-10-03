@@ -3,46 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS Playground & Interactive Demos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="upBro"></h1>
-    <p id="downBro"></p>
+    <div class="app-container">
+        <!-- Header & Hero Section -->
+        <header class="app-header">
+            <div class="badge">JavaScript Practice Suite</div>
+            <h1 class="main-title">Interactive JS Demonstrations</h1>
+            <p class="subtitle">A showcase of core JavaScript concepts, DOM manipulations, and mini-utilities.</p>
+        </header>
 
-    <p id="p1"></p>
-    <p id="p2"></p>
-    <p id="p3"></p>
+        <!-- Dynamic User Status Banner -->
+        <section class="card status-card">
+            <div class="status-header">
+                <h2 id="upBro">Welcome</h2>
+                <p id="downBro" class="status-tag"></p>
+            </div>
+            <div class="status-details">
+                <p id="p1" class="info-badge"></p>
+                <p id="p2" class="info-badge"></p>
+                <p id="p3" class="info-badge"></p>
+            </div>
+        </section>
 
+        <!-- Interactive Utilities Grid -->
+        <main class="grid-container">
+            <!-- Circumference Calculator -->
+            <section class="card widget-card">
+                <div class="card-icon">📐</div>
+                <h3>Circumference Calculator</h3>
+                <p class="card-desc">Calculate the circumference of a circle given its radius.</p>
+                <div class="input-group">
+                    <input type="number" id="inpute" placeholder="Enter radius in cm">
+                    <button onclick="result()" class="btn btn-primary">Calculate</button>
+                </div>
+                <div class="result-display">
+                    <span class="result-label">Result:</span>
+                    <h2 id="show" class="result-value">--</h2>
+                </div>
+            </section>
 
-    <!-- circumference calculator -->
-    <input type="number" name="" id="inpute" placeholder="enter the radius">
-    <button onclick="result()">calculate</button>
-    <h1 id="show"></h1> <br><br>
+            <!-- Number Counter -->
+            <section class="card widget-card">
+                <div class="card-icon">🔢</div>
+                <h3>Number Counter</h3>
+                <p class="card-desc">An interactive step counter with increment, decrement, and reset.</p>
+                <div class="counter-display">
+                    <div id="displayHere" class="counter-value">0</div>
+                </div>
+                <div class="button-group">
+                    <button onclick="decreaseBtn()" class="btn btn-secondary">Decrease</button>
+                    <button onclick="resetBtn()" id="resetBtn" class="btn btn-outline">Reset</button>
+                    <button onclick="increaseBtn()" class="btn btn-primary">Increase</button>
+                </div>
+            </section>
 
+            <!-- Dice Roller -->
+            <section class="card widget-card">
+                <div class="card-icon">🎲</div>
+                <h3>Dice Roller</h3>
+                <p class="card-desc">Roll a standard 6-sided die to get a random number.</p>
+                <div class="dice-display">
+                    <div id="showOff" class="dice-value">?</div>
+                </div>
+                <button onclick="rollIt()" class="btn btn-accent btn-full">Roll Dice</button>
+            </section>
 
-    <!-- Number counter -->
-    <div id="displayHere">0</div>
-    <button onclick="increaseBtn()">Increase</button>
-    <button onclick="resetBtn()" id="resetBtn">Reset</button>
-    <button onclick="decreaseBtn()">Decrease</button><br><br>
+            <!-- Input Shower -->
+            <section class="card widget-card">
+                <div class="card-icon">🎉</div>
+                <h3>Greeting Generator</h3>
+                <p class="card-desc">Trigger dynamic messaging directly into the input field.</p>
+                <div class="input-group">
+                    <input type="text" id="elShow" placeholder="Message will appear here" readonly>
+                    <button onclick="shoWed()" class="btn btn-primary">Show me</button>
+                </div>
+            </section>
 
- 
-    <!-- Dice roller -->
-    <div id="showOff"></div>
-    <button onclick="rollIt()">Roll</button><br><br>
-
-    <!-- Input shower -->
-    <input type="text" id="elShow">
-    <button onclick="shoWed()">Show me</button>
-
-
-
-    <!-- Human growth stage determiner -->
-     <input type="number" id="kinAge">
-     <button onclick="showMitt()">Tell me</button>
-     <div id="showHuman"></div>
-
+            <!-- Human Growth Stage Determiner -->
+            <section class="card widget-card">
+                <div class="card-icon">🌱</div>
+                <h3>Life Stage Determiner</h3>
+                <p class="card-desc">Enter your age to discover your current stage of life.</p>
+                <div class="input-group">
+                    <input type="number" id="kinAge" placeholder="Enter your age">
+                    <button onclick="showMitt()" class="btn btn-primary">Tell me</button>
+                </div>
+                <div class="result-display">
+                    <div id="showHuman" class="stage-result">Enter an age above to see your life stage.</div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script src="index.js"></script>
 </body>
